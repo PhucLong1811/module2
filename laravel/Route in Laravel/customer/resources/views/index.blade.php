@@ -23,7 +23,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-<a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a&
+<a href="#">Xem</a> | <a href="edit.blade.php">Sửa</a> | <a href="#">Xóa</a&
       </td>
   </tr>
   <tr>
@@ -32,7 +32,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="#">Xem</a> | <a href="edit.blade.php">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -41,7 +41,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="#">Xem</a> | <a href="edit.blade.php">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="#">Xem</a> | <a href="edit.blade.php">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   <tr>
@@ -59,7 +59,7 @@
       <td>01234567890</td>
       <td>email.test@mail.com</td>
       <td>
-          <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+          <a href="#">Xem</a> | <a href="edit.blade.php">Sửa</a> | <a href="#">Xóa</a>
       </td>
   </tr>
   </tbody>

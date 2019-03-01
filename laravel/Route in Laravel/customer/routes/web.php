@@ -11,12 +11,22 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
-  Route::get('create', 'testing@create');
+	Route::get('index', 'CustomerController@index');
 
-  Route::post('store', 'testing@store');
+	Route::get('create', 'CustomerController@create');
+
+	Route::post('store', 'CustomerController@store');
+
+	Route::get('{id}/show', 'CustomerController@show');
+
+	Route::get('{id}/edit', 'CustomerController@edit');
+
+	Route::patch('{id}/update', 'CustomerController@update');
+
+	Route::delete('{id}', 'CustomerController@destroy');
 
 
 
