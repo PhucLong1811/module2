@@ -14,3 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/tasks/create', 'TaskController@create')->name('tasks.create'); 
