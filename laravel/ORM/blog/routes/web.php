@@ -19,3 +19,11 @@ Route::get('/{id}/show','BlogController@show')->name('show');
 Route::get('/{id}/edit','BlogController@edit')->name('edit');
 Route::post('/{id}/update','BlogController@update')->name('update');
 Route::get('/{id}/delete','BlogController@destroy')->name('delete');
+
+/*category*/
+Route::get('/catecreate','CategoryController@catecreate')->name('catecreate');
+Route::post('/catestore','CategoryController@store')->name('catestore');
+Route::get('/catelist','CategoryController@list')->name('catelist');
+Route::get('/{id}/cateedit','CategoryController@edit')->name('cateedit');
+Route::post('/{id}/cateupdate','CategoryController@update')->name('cateupdate');
+Route::get('/{id}/catedel','CategoryController@destroy')->name('catedel');

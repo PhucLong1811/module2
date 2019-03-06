@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('blog.layouts.master')
 @section('head.title')
 	Danh sách
 @stop

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 
+use App\Category;
+
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -11,12 +13,13 @@ class BlogController extends Controller
     public function index()
     {
         
-        return view('manage.index');
+        return view('index');
     }
 
     public function create()
     {
-        return view('manage.create');
+         $category = Category::all();
+        return view('blog.manage.create',compact('category'));
     }
 
     public function store(Request $request)
@@ -24,25 +27,34 @@ class BlogController extends Controller
         $blogger = new Blog;
         $blogger->title = $request->title;
         $blogger->content = $request->content;
+        $blogger->category_id = $request->category_id;
+
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('images', 'public');
+            $blogger->image = $path;
+        }
         $blogger->save();
+        
         return redirect()->route('list');
     }
 
     public function list ()
     {
-        $blogger = Blog::all();
-        return view('manage.list',compact('blogger'));
+        $blogger = Blog::paginate(4);
+        return view('blog.manage.list',compact('blogger'));
     }
     public function show($id)
     {
         $blogger = Blog::find($id);
-        return view('manage.show',compact('blogger'));
+        return view('blog.manage.show',compact('blogger'));
     }
 
     public function edit($id)
     {
         $blogger = Blog::find($id);
-        return view('manage.edit',compact('blogger'));
+        return view('blog.manage.edit',compact('blogger'));
 
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomerTable extends Migration
+class Blog extends Migration
 {
     /**
      * Run the migrations.
@@ -17,8 +17,11 @@ class CreateCustomerTable extends Migration
           $table->increments('id');
           $table->string('title');
           $table->string('content');
+          $table->string('image');
+          $table->string('category_id');
           $table->timestamps();
       });
+     
   }
 
     /**
@@ -28,6 +31,6 @@ class CreateCustomerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        //
     }
 }

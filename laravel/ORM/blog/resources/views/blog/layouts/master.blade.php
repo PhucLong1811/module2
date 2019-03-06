@@ -9,9 +9,9 @@
 	@yield('head.css')
 </head>
 <body>
-	@include('partial.header')
+	@include('blog.partial.header')
 	@yield('body.content')
 	@yield('footer.content')
-	@include('partial.footer')
+	@include('blog.partial.footer')
 </body>
 </html>

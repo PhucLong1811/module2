@@ -13,14 +13,17 @@ class CreateCustomerTable extends Migration
      */
     public function up()
     {
-
         Schema::create('customer', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('name');
-          $table->date('dob');
-          $table->string('email');
-          $table->timestamps();
-      });
+            $table->increments('id');
+            $table->string('name');
+            $table->date('dob');
+            $table->string('email');
+            $table->bigInteger('city_id')->unsigned();
+            $table->timestamps();
+        });
+        Schema::table('customer', function (Blueprint $table) {
+            $table->foreign('city_id')->references('id')->on('cities');
+        });
     }
 
     /**
