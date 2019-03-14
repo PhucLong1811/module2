@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="../source/assets/dest/rs-plugin/css/settings.css">
 	<link rel="stylesheet" href="../source/assets/dest/rs-plugin/css/responsive.css">
 	<link rel="stylesheet" title="style" href="../source/assets/dest/css/style.css">
-	<link rel="stylesheet" href="../source/assets/dest/css/animate.css">
+
 	<link rel="stylesheet" title="style" href="../source/assets/dest/css/huong-style.css">
 </head>
 <body style="background: #f2f2f2;">
