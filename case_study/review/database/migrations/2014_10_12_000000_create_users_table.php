@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->boolean('level')->default(0);
             $table->string('image');
-            $table->boolean('gender');
+            $table->boolean('gender')->nullable();
             $table->date('DOB');
             $table->rememberToken();
             $table->timestamps();

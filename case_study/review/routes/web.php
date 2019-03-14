@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','pageController@index')->name('home');
 Route::group(['prefix'=>'user'],function(){
 	Route::group(['prefix'=>'page'],function(){
-		Route::get('/home','pageController@index')->name('home');
+		
 	});
 	
 });
@@ -21,11 +22,12 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('/home','pageController@homeadmin')->name('homeadmin');
 	});
 	Route::group(['prefix'=>'slider'],function(){
-		Route::get('/create','sliderController@createSlide')->name('crSlide');
-		Route::post('/create','sliderController@postSlide')->name('postSlide');
+		Route::get('/create','sliderController@createSlide')->name('create.Slide');
+		Route::post('/create','sliderController@postSlide')->name('post.Slide');
 		Route::get('/list','sliderController@listSlide')->name('list.Slide');
 	});
-	Route::group(['prefix'=>'slider'],function(){
-		Route::get('create','loginController@createLogin')->name('crLogin');
+	Route::group(['prefix'=>'login'],function(){
+		Route::get('/create','loginController@createLogin')->name('create.Login');
+		Route::post('/postcreate','loginController@postLogin')->name('post.Login');
 	});
 });
