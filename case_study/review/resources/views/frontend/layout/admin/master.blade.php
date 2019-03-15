@@ -38,13 +38,13 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="http://www.creative-tim.com" class="simple-text">
-            IMAGE
+            img
           </a>
         </div>
         <!-- Phần sửa link -->
         <ul class="nav">
           <li>
-            <a href="để route ở đây">
+            <a href="{{route('list.Register')}}">
               <i class="pe-7s-user"></i>
               <p>User Profile</p>
             </a>
@@ -103,10 +103,12 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-             <li class="dropdown">
+              
+              @if(Auth::check())
+                           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <p>
-                  Chào mừng : 
+                  Chào mừng : {{Auth::user()->name}}
                   <b class="caret"></b>
                 </p>
               </a>
@@ -119,14 +121,15 @@
                 <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>
               </ul>
-            </li>
-            <li>
-              <a href="#">
+                          </li>
+                          <li>
+              <a href="{{route('Logout')}}">
                 <p>Log out</p>
               </a>
-            </li>
-            <li class="separator hidden-lg"></li>
-          </ul>
+                          </li>
+                          <li class="separator hidden-lg"></li>
+                          @endif
+                        </ul>
         </div>
       </div>
     </nav>

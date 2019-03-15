@@ -12,49 +12,48 @@ use Hash;
 
 class loginController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createLogin()
+
+    public function Login()
     {
-        return view('page.action_admin.login.create');
+         return view('page.login.login');
     }
 
     public function postLogin(Request $request)
     {
-     $this->validate($request,
-        [
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
-            're_password' => 'required|same:password',
-            'name' => 'required'
-        ]);
-     $user = new User();
-     $user->name = $request->name;
-     $user->email = $request->email;
-     $user->password = Hash::make($request->password);
-     $user->phone = $request->phone;
-     $user->address = $request->address;
-    /* $user->gender = $request->gender;*/
-     $user->DOB = $request->DOB;
-     if ($request->hasFile('image')) 
-     {
-        $image = $request->file('image');
-        $path = $image->store('images', 'public');
-        $user->image = $path;
+        $this->validate($request,
+            [
+                'email'=>'required|email',
+                'password' =>'required|min:6' 
+            ]);
+        $user = array('email'=>$request->email,'password'=>$request->password);
+        if (Auth::attempt($user)) {
+           return redirect()->route('list.Register');
+        }else {
+            return view('page.login.login');
+        }
     }
-    $user->save();
-    return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
 
-}
-
-
-public function show($id)
-{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         //
-}
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

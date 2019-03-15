@@ -25,7 +25,7 @@ class pageController extends Controller
      */
     public function homeadmin()
     {
-        return view('frontend.layout.admin.body');
+        return redirect()->route('list.Register');
     }
 
     /**

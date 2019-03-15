@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('address');
-            $table->boolean('level')->default(0);
+            $table->string('level')->default(0);
             $table->string('image');
             $table->boolean('gender')->nullable();
             $table->date('DOB');
