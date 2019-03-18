@@ -103,71 +103,74 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              
+
               @if(Auth::check())
-                           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <p>
-                  Chào mừng : {{Auth::user()->name}}
-                  <b class="caret"></b>
-                </p>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-                          </li>
-                          <li>
-              <a href="{{route('Logout')}}">
-                <p>Log out</p>
-              </a>
-                          </li>
-                          <li class="separator hidden-lg"></li>
-                          @endif
-                        </ul>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <p>
+                    Chào mừng : {{Auth::user()->name}}
+                    <b class="caret"></b>
+                  </p>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="{{route('Logout')}}">
+                  <p>Log out</p>
+                </a>
+              </li>
+              <li class="separator hidden-lg"></li>
+              @else
+              <li><a href="#">Đăng nhập</a></li>
+
+              @endif
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    <div class="content">
-     @yield('contentadmin')
-   </div>
-   <!-- không động tới -->
-   <footer class="footer">
-    <div class="container-fluid">
-      <nav class="pull-left">
-        <ul>
-          <li>
-            <a href="#">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Company
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="#">
-             Blog
-           </a>
-         </li>
-       </ul>
-     </nav>
-     <p class="copyright pull-right">
-      &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-    </p>
-  </div>
-</footer>
+      </nav>
+      <div class="content">
+       @yield('contentadmin')
+     </div>
+     <!-- không động tới -->
+     <footer class="footer">
+      <div class="container-fluid">
+        <nav class="pull-left">
+          <ul>
+            <li>
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Company
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a href="#">
+               Blog
+             </a>
+           </li>
+         </ul>
+       </nav>
+       <p class="copyright pull-right">
+        &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+      </p>
+    </div>
+  </footer>
 
 </div>
 </div>

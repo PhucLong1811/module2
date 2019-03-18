@@ -29,7 +29,7 @@ class registerController extends Controller
         if (Auth::attempt(['email'=>$request->email,'password'=>$request->password,'level'=>'1'])) {
            return redirect()->route('list.Register');
         }else {
-            return view('page.login.login');
+            return redirect()->route('home');
         }
     }
 
